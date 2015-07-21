@@ -1,0 +1,331 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.0.1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 13-10-2014 a las 20:25:26
+-- Versión del servidor: 5.1.36
+-- Versión de PHP: 5.3.0
+
+
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Base de datos: `lolein`
+--
+drop database lolein;
+create database lolein;
+use lolein;
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cliente`
+--
+
+CREATE TABLE IF NOT EXISTS `cliente` (
+  `Rut` varchar(15) NOT NULL,
+  `Nombre` varchar(50) NOT NULL,
+  `Correo` varchar(100) NOT NULL,
+  `Fecha_Nac` date NOT NULL,
+  `Pass` varchar(15) NOT NULL,
+  PRIMARY KEY (`Rut`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcar la base de datos para la tabla `cliente`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `producto`
+--
+
+CREATE TABLE IF NOT EXISTS `producto` (
+  `ID` int(255) NOT NULL,
+  `Nombre_Producto` varchar(50) NOT NULL,
+  `Foto` varchar(20) NOT NULL,
+  `Detalle` varchar(100) NOT NULL,
+  `Precio` int(8) NOT NULL,
+  `Stock` int(3) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcar la base de datos para la tabla `producto`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos_vendidos`
+--
+
+CREATE TABLE IF NOT EXISTS `productos_vendidos` (
+  `Id` int(255) NOT NULL,
+  `Id_Venta` int(255) NOT NULL,
+  `Id_producto` int(255) NOT NULL,	
+  `Cantidad` int(255) NOT NULL,
+  `Precio` int(255) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `Id_Venta` (`Id_Venta`),
+  KEY `Id_producto` (`Id_producto`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+--
+-- Volcar la base de datos para la tabla `productos_vendidos`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `venta`
+--
+
+CREATE TABLE IF NOT EXISTS `venta` (
+  `ID` int(255) NOT NULL,
+  `Rut_Cliente` varchar(15) NOT NULL,
+  `Total` int(255) NOT NULL,
+  `Fecha` date NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `Rut_Cliente` (`Rut_Cliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcar la base de datos para la tabla `venta`
+--
+
+
+--
+-- Filtros para las tablas descargadas (dump)
+--
+
+--
+-- Filtros para la tabla `productos_vendidos`
+--
+ALTER TABLE `productos_vendidos`
+  ADD CONSTRAINT `productos_vendidos_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`ID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `productos_vendidos_ibfk2` FOREIGN KEY (`Id_Venta`) REFERENCES `venta` (`ID`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `venta`
+--
+ALTER TABLE `venta`
+  ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`Rut_Cliente`) REFERENCES `cliente` (`Rut`) ON UPDATE CASCADE;
+
+
+
+
+
+Insert into cliente values ('1-1', 'Admin', 'admin@gmail.com','2014/01/01', '1111');Insert into cliente values ('13509810-2', 'Sherezade', 'bhjea@gmail.com','1990/02/03', '7534');
+Insert into cliente values ('18979524-2', 'Nicolas', 'zvxpl@gmail.com','1967/03/11', '1227');
+Insert into cliente values ('14518503-1', 'Alberto', 'qyzwx@gmail.com','1963/12/05', '8163');
+Insert into cliente values ('16649782-2', 'Maria', 'jpplk@gmail.com','1978/07/06', '7174');
+Insert into cliente values ('13234250-6', 'Diego', 'uergn@gmail.com','1955/08/21', '638');
+Insert into producto values('1','Pantalon','foto5.jpg','La mejor ropa, diseñada por grandes artistas','21000','89');
+Insert into producto values('2','Chaqueta','foto14.jpg','La mejor ropa, diseñada por grandes artistas','17000','88');
+Insert into producto values('3','Shores','foto15.jpg','Una atuendo espectacular para las fiestas','20000','66');
+Insert into producto values('4','Buzo','foto0.jpg','La mejor ropa, diseñada por grandes artistas','17000','17');
+Insert into producto values('5','Shores','foto12.jpg','Echa con lana de primer nivel','8000','87');
+Insert into producto values('6','Shores','foto2.jpg','Echa con lana de primer nivel','22000','2');
+Insert into producto values('7','Camisa','foto12.jpg','Echa con lana de primer nivel','11000','89');
+Insert into producto values('8','Polera','foto11.jpg','La mejor ropa, diseñada por grandes artistas','22000','31');
+Insert into producto values('9','Poleron','foto7.jpg','La mejor ropa, diseñada por grandes artistas','20000','59');
+Insert into producto values('10','Buzo','foto7.jpg','Echa con lana de primer nivel','19000','7');
+Insert into producto values('11','Chaqueta','foto6.jpg','La mejor ropa, diseñada por grandes artistas','11000','9');
+Insert into producto values('12','Sweater','foto6.jpg','Una prenda muy bella para la vida','21000','4');
+Insert into producto values('13','Chalas','foto3.jpg','Una prenda muy bella para la vida','11000','52');
+Insert into producto values('14','Polera','foto8.jpg','Una prenda muy bella para la vida','6000','19');
+Insert into producto values('15','Chaqueta','foto4.jpg','La mejor ropa, diseñada por grandes artistas','11000','17');
+Insert into producto values('16','Chalas','foto16.jpg','Echa con lana de primer nivel','21000','61');
+Insert into producto values('17','Chaqueta','foto5.jpg','Una prenda muy bella para la vida','9000','56');
+Insert into producto values('18','Camisa','foto9.jpg','Una atuendo espectacular para las fiestas','10000','81');
+Insert into producto values('19','Shores','foto12.jpg','Echa con lana de primer nivel','10000','87');
+Insert into producto values('20','Camisa','foto15.jpg','Una prenda muy bella para la vida','15000','12');
+Insert into producto values('21','Pantalon','foto8.jpg','La mejor ropa, diseñada por grandes artistas','7000','91');
+Insert into producto values('22','Shores','foto13.jpg','La mejor ropa, diseñada por grandes artistas','5000','25');
+Insert into producto values('23','Vestido','foto0.jpg','Una prenda muy bella para la vida','8000','10');
+Insert into producto values('24','Pantalon','foto8.jpg','Una prenda muy bella para la vida','21000','95');
+Insert into producto values('25','Chaqueta','foto11.jpg','Una atuendo espectacular para las fiestas','17000','98');
+Insert into producto values('26','Polera','foto0.jpg','Echa con lana de primer nivel','24000','10');
+Insert into producto values('27','Shores','foto0.jpg','La mejor ropa, diseñada por grandes artistas','23000','95');
+Insert into producto values('28','Shores','foto15.jpg','Echa con lana de primer nivel','8000','86');
+Insert into producto values('29','Polera','foto9.jpg','La mejor ropa, diseñada por grandes artistas','7000','79');
+Insert into producto values('30','Pantalon','foto4.jpg','Echa con lana de primer nivel','10000','48');
+Insert into productos_vendidos values('1','1','7','1', '11000');
+
+Insert into productos_vendidos values('2','1','29','2', '7000');
+Insert into venta values ('1','14518503-1','25000','2010/07/02');
+Insert into productos_vendidos values('3','2','27','1', '23000');
+Insert into venta values ('2','13234250-6','23000','2010/07/19');
+Insert into productos_vendidos values('4','3','24','1', '21000');
+Insert into venta values ('3','18979524-2','21000','2012/09/25');
+Insert into productos_vendidos values('5','4','8','1', '22000');
+Insert into venta values ('4','13509810-2','22000','2012/08/09');
+Insert into productos_vendidos values('6','5','9','1', '20000');
+Insert into productos_vendidos values('7','5','18','2', '10000');
+Insert into venta values ('5','16649782-2','40000','2015/01/13');
+Insert into productos_vendidos values('8','6','18','2', '10000');
+Insert into productos_vendidos values('9','6','19','1', '10000');
+Insert into venta values ('6','16649782-2','30000','2013/08/14');
+Insert into productos_vendidos values('10','7','4','1', '17000');
+Insert into venta values ('7','16649782-2','17000','2013/05/21');
+Insert into productos_vendidos values('11','8','26','2', '24000');
+Insert into productos_vendidos values('12','8','8','1', '22000');
+Insert into venta values ('8','13234250-6','70000','2014/04/18');
+Insert into productos_vendidos values('13','9','4','1', '17000');
+Insert into productos_vendidos values('14','9','4','2', '17000');
+Insert into venta values ('9','16649782-2','51000','2010/07/26');
+Insert into productos_vendidos values('15','10','29','1', '7000');
+Insert into productos_vendidos values('16','10','20','1', '15000');
+Insert into productos_vendidos values('17','10','16','1', '21000');
+Insert into venta values ('10','13509810-2','43000','2010/07/23');
+Insert into productos_vendidos values('18','11','19','2', '10000');
+Insert into productos_vendidos values('19','11','25','1', '17000');
+Insert into venta values ('11','16649782-2','37000','2013/06/11');
+Insert into productos_vendidos values('20','12','1','2', '21000');
+Insert into venta values ('12','18979524-2','42000','2010/11/28');
+Insert into productos_vendidos values('21','13','18','2', '10000');
+Insert into productos_vendidos values('22','13','26','1', '24000');
+Insert into venta values ('13','16649782-2','44000','2012/09/01');
+Insert into productos_vendidos values('23','14','19','1', '10000');
+Insert into productos_vendidos values('24','14','9','2', '20000');
+Insert into productos_vendidos values('25','14','29','2', '7000');
+Insert into venta values ('14','18979524-2','64000','2011/04/22');
+Insert into productos_vendidos values('26','15','27','1', '23000');
+Insert into venta values ('15','16649782-2','23000','2010/06/18');
+Insert into productos_vendidos values('27','16','28','2', '8000');
+Insert into venta values ('16','13234250-6','16000','2010/03/02');
+Insert into productos_vendidos values('28','17','16','2', '21000');
+Insert into venta values ('17','13509810-2','42000','2013/05/30');
+Insert into productos_vendidos values('29','18','27','1', '23000');
+Insert into productos_vendidos values('30','18','2','1', '17000');
+Insert into productos_vendidos values('31','18','12','2', '21000');
+Insert into venta values ('18','13234250-6','82000','2010/05/10');
+Insert into productos_vendidos values('32','19','4','1', '17000');
+Insert into productos_vendidos values('33','19','3','1', '20000');
+Insert into venta values ('19','14518503-1','37000','2012/12/05');
+Insert into productos_vendidos values('34','20','6','1', '22000');
+Insert into productos_vendidos values('35','20','8','2', '22000');
+Insert into venta values ('20','13234250-6','66000','2014/07/07');
+Insert into productos_vendidos values('36','21','21','1', '7000');
+Insert into venta values ('21','14518503-1','7000','2012/01/09');
+Insert into productos_vendidos values('37','22','4','1', '17000');
+Insert into venta values ('22','18979524-2','17000','2013/09/27');
+Insert into productos_vendidos values('38','23','11','2', '11000');
+Insert into productos_vendidos values('39','23','15','2', '11000');
+Insert into venta values ('23','13509810-2','44000','2014/07/11');
+Insert into productos_vendidos values('40','24','7','1', '11000');
+Insert into productos_vendidos values('41','24','3','1', '20000');
+Insert into productos_vendidos values('42','24','20','1', '15000');
+Insert into venta values ('24','14518503-1','46000','2014/10/10');
+Insert into productos_vendidos values('43','25','28','2', '8000');
+Insert into productos_vendidos values('44','25','29','1', '7000');
+Insert into venta values ('25','13234250-6','23000','2012/05/04');
+Insert into productos_vendidos values('45','26','27','1', '23000');
+Insert into productos_vendidos values('46','26','22','2', '5000');
+Insert into productos_vendidos values('47','26','1','2', '21000');
+Insert into venta values ('26','18979524-2','75000','2012/05/11');
+Insert into productos_vendidos values('48','27','18','1', '10000');
+Insert into venta values ('27','14518503-1','10000','2014/09/25');
+Insert into productos_vendidos values('49','28','18','2', '10000');
+Insert into productos_vendidos values('50','28','27','2', '23000');
+Insert into venta values ('28','14518503-1','66000','2014/02/04');
+Insert into productos_vendidos values('51','29','6','1', '22000');
+Insert into productos_vendidos values('52','29','16','2', '21000');
+Insert into productos_vendidos values('53','29','29','2', '7000');
+Insert into venta values ('29','13509810-2','78000','2013/03/05');
+Insert into productos_vendidos values('54','30','10','2', '19000');
+Insert into productos_vendidos values('55','30','28','1', '8000');
+Insert into productos_vendidos values('56','30','3','2', '20000');
+Insert into venta values ('30','16649782-2','86000','2010/08/19');
+Insert into productos_vendidos values('57','31','27','1', '23000');
+Insert into venta values ('31','14518503-1','23000','2011/08/13');
+Insert into productos_vendidos values('58','32','14','1', '6000');
+Insert into productos_vendidos values('59','32','12','2', '21000');
+Insert into venta values ('32','13509810-2','48000','2012/12/19');
+Insert into productos_vendidos values('60','33','2','1', '17000');
+Insert into productos_vendidos values('61','33','28','1', '8000');
+Insert into venta values ('33','18979524-2','25000','2014/09/17');
+Insert into productos_vendidos values('62','34','13','1', '11000');
+Insert into productos_vendidos values('63','34','7','2', '11000');
+Insert into venta values ('34','13509810-2','33000','2012/06/12');
+Insert into productos_vendidos values('64','35','21','1', '7000');
+Insert into venta values ('35','13234250-6','7000','2011/07/19');
+Insert into productos_vendidos values('65','36','1','2', '21000');
+Insert into productos_vendidos values('66','36','9','2', '20000');
+Insert into productos_vendidos values('67','36','16','1', '21000');
+Insert into venta values ('36','18979524-2','103000','2015/01/18');
+Insert into productos_vendidos values('68','37','29','1', '7000');
+Insert into productos_vendidos values('69','37','9','1', '20000');
+Insert into venta values ('37','13509810-2','27000','2010/02/21');
+Insert into productos_vendidos values('70','38','10','1', '19000');
+Insert into productos_vendidos values('71','38','20','1', '15000');
+Insert into productos_vendidos values('72','38','17','2', '9000');
+Insert into venta values ('38','14518503-1','52000','2011/02/01');
+Insert into productos_vendidos values('73','39','25','1', '17000');
+Insert into productos_vendidos values('74','39','29','1', '7000');
+Insert into venta values ('39','18979524-2','24000','2014/06/14');
+Insert into productos_vendidos values('75','40','14','1', '6000');
+Insert into productos_vendidos values('76','40','27','2', '23000');
+Insert into venta values ('40','13509810-2','52000','2012/10/22');
+Insert into productos_vendidos values('77','41','25','1', '17000');
+Insert into venta values ('41','13234250-6','17000','2012/10/20');
+Insert into productos_vendidos values('78','42','2','1', '17000');
+Insert into venta values ('42','13509810-2','17000','2013/03/13');
+Insert into productos_vendidos values('79','43','3','1', '20000');
+Insert into productos_vendidos values('80','43','2','2', '17000');
+Insert into venta values ('43','13509810-2','54000','2013/05/26');
+Insert into productos_vendidos values('81','44','5','1', '8000');
+Insert into productos_vendidos values('82','44','4','2', '17000');
+Insert into productos_vendidos values('83','44','23','1', '8000');
+Insert into venta values ('44','16649782-2','50000','2014/09/08');
+Insert into productos_vendidos values('84','45','11','2', '11000');
+Insert into productos_vendidos values('85','45','18','1', '10000');
+Insert into venta values ('45','14518503-1','32000','2014/04/05');
+Insert into productos_vendidos values('86','46','2','1', '17000');
+Insert into venta values ('46','18979524-2','17000','2010/02/15');
+Insert into productos_vendidos values('87','47','30','2', '10000');
+Insert into venta values ('47','16649782-2','20000','2011/01/13');
+Insert into productos_vendidos values('88','48','27','2', '23000');
+Insert into productos_vendidos values('89','48','1','2', '21000');
+Insert into productos_vendidos values('90','48','8','2', '22000');
+Insert into venta values ('48','18979524-2','132000','2014/12/19');
+Insert into productos_vendidos values('91','49','28','1', '8000');
+Insert into venta values ('49','13234250-6','8000','2012/08/04');
+Insert into productos_vendidos values('92','50','18','2', '10000');
+Insert into productos_vendidos values('93','50','16','2', '21000');
+Insert into venta values ('50','13509810-2','62000','2013/07/31');
+Insert into productos_vendidos values('94','51','13','1', '11000');
+Insert into productos_vendidos values('95','51','3','1', '20000');
+Insert into venta values ('51','16649782-2','31000','2010/09/20');
+Insert into productos_vendidos values('96','52','8','1', '22000');
+Insert into venta values ('52','18979524-2','22000','2012/09/02');
+Insert into productos_vendidos values('97','53','23','1', '8000');
+Insert into productos_vendidos values('98','53','12','2', '21000');
+Insert into venta values ('53','14518503-1','50000','2012/06/21');
+Insert into productos_vendidos values('99','54','13','2', '11000');
+Insert into productos_vendidos values('100','54','4','2', '17000');
+Insert into venta values ('54','13234250-6','56000','2013/06/13');
+Insert into productos_vendidos values('101','55','23','1', '8000');
+Insert into productos_vendidos values('102','55','24','1', '21000');
+Insert into venta values ('55','18979524-2','29000','2011/05/28');
+Insert into productos_vendidos values('103','56','16','1', '21000');
+Insert into productos_vendidos values('104','56','7','2', '11000');
+Insert into venta values ('56','14518503-1','43000','2012/04/20');
+Insert into productos_vendidos values('105','57','21','1', '7000');
+Insert into productos_vendidos values('106','57','26','1', '24000');
+Insert into venta values ('57','14518503-1','31000','2012/10/29');
+Insert into productos_vendidos values('107','58','22','2', '5000');
+Insert into venta values ('58','13234250-6','10000','2014/04/17');
+Insert into productos_vendidos values('108','59','24','2', '21000');
+Insert into venta values ('59','18979524-2','42000','2014/12/12');
+Insert into productos_vendidos values('109','60','14','2', '6000');
+Insert into productos_vendidos values('110','60','17','1', '9000');
+Insert into venta values ('60','16649782-2','21000','2010/02/10');
+

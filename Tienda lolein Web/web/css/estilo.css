@@ -1,0 +1,657 @@
+body {
+  background: #f6f6f6;
+}
+.cuerpo {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+}
+.carro {
+  padding: 60px 0 0 0;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 36px;
+  text-align: center;
+}
+.lolein {
+  top: -25px;
+  left: -50px;
+  position: absolute;
+}
+.logeo {
+  display: inline-block;
+  position: absolute;
+  width: 250px;
+  top: 0;
+  right: 0;
+}
+.logeo .bienvenido {
+  display: inline-block;
+  color: #000;
+  margin: 5px 0;
+  padding: 0 8px 0 0;
+  font-family: Georgia;
+  font-size: 16px;
+}
+.logeo a {
+  font-family: Georgia;
+  background: #ffb005;
+  display: inline-block;
+  color: #fff;
+  margin: 0;
+  border: 1px solid #ffb005;
+  padding: 0 5px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.logeo a:hover {
+  background: #ffb005;
+  color: #fff;
+}
+.logeo .registracion {
+  font-family: Georgia;
+  background: #ffb005;
+  display: inline-block;
+  color: #fff;
+  margin: 0;
+  border: 1px solid #ffb005;
+  padding: 0 5px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.logeo form input {
+  border-radius: 10px;
+  margin: 2px 0;
+  width: 100%;
+  font-family: Georgia;
+}
+.logeo form .entrar {
+  margin: 5px 0;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 12px;
+  border-radius: 10px;
+  background: #ffb005;
+  color: #000;
+}
+.contenedorMenuLogo {
+  border: 2px solid #000;
+  border-top-style: dotted;
+  border-bottom-style: dotted;
+  border-right-style: none;
+  border-left-style: none;
+}
+.contenedorMenuLogo nav {
+  margin: 0.5em 0;
+  background: #ffb005;
+}
+.contenedorMenuLogo nav header {
+  padding: 0.5em 0;
+  font-size: 54px;
+  text-align: center;
+  font-family: Impact;
+  color: #fff;
+  letter-spacing: 4px;
+}
+.contenedorMenuLogo nav ul {
+  margin: auto;
+  width: 820px;
+}
+.contenedorMenuLogo nav ul li {
+  display: inline-block;
+  padding: 0 1em 1em 1em;
+}
+.contenedorMenuLogo nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: arial;
+}
+.contenedorMenuLogo nav ul li a:hover {
+  color: #000;
+}
+.contenido {
+  position: relative;
+  margin: 10px 0 0 0;
+  border: 2px solid #000;
+  border-top-style: none;
+  border-bottom-style: dotted;
+  border-right-style: none;
+  border-left-style: none;
+}
+.contenido aside {
+  float: left;
+  width: 325px;
+  top: 100px;
+  left: 0;
+}
+.contenido aside .linea {
+  border: 2.5px solid #000;
+  margin: 5px 0 15px 0;
+}
+.contenido aside .ofertaProductos {
+  padding: 10px 0 0 0;
+  height: 410px;
+  border: 2px solid #000;
+  border-top-style: dotted;
+  border-bottom-style: none;
+  border-right-style: none;
+  border-left-style: none;
+}
+.contenido aside .ofertaProductos .marca {
+  border: 2.5px solid #000;
+  margin: 15px 0;
+}
+.contenido aside .ofertaProductos h2 {
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 54px;
+  font-family: Impact;
+  font-weight: normal;
+}
+.contenido aside .ofertaProductos h4 {
+  margin: 0;
+  font-family: Georgia;
+  font-size: 32px;
+  text-align: justify;
+}
+.contenido aside .ofertaProductos .comprar .flecha {
+  margin: 0 1em 0 2em;
+  width: 50px;
+  height: 50px;
+}
+.contenido aside .ofertaProductos .comprar a {
+  border: 3px solid #f00;
+  padding: 5px 25px;
+  text-decoration: none;
+  color: #f00;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 26px;
+}
+.contenido aside .ofertaProductos .comprar a:hover {
+  color: #fff;
+  background: #f00;
+}
+.contenido aside .oferta {
+  margin: 10px 0 0 0;
+  padding: 10px 0 10px 0;
+  height: 420px;
+  border: 2px solid #000;
+  border-top-style: dotted;
+  border-bottom-style: dotted;
+  border-right-style: none;
+  border-left-style: none;
+  position: relative;
+}
+.contenido aside .oferta .marca {
+  border: 2.5px solid #000;
+  margin: 15px 0;
+}
+.contenido aside .oferta h2 {
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 26px;
+  font-family: Impact;
+  font-weight: normal;
+}
+.contenido aside .oferta .imgOferta {
+  height: 320px;
+  position: absolute;
+  right: 0;
+  top: 14px;
+  z-index: -1;
+}
+.contenido aside .oferta .comprar .flecha {
+  margin: 4em 1em 0 2em;
+  width: 50px;
+  height: 50px;
+}
+.contenido aside .oferta .comprar a {
+  border: 3px solid #f00;
+  padding: 5px 25px;
+  text-decoration: none;
+  color: #f00;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 26px;
+}
+.contenido aside .oferta .comprar a:hover {
+  color: #fff;
+  background: #f00;
+}
+.contenido aside .oferta .cupon {
+  margin: 2em 6em;
+}
+.contenido .productos {
+  width: 590px;
+  float: left;
+  margin: 0 0 0 50px;
+}
+.contenido .productos h2 {
+  margin: 15px 0;
+  color: #966600;
+  letter-spacing: 1px;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 28px;
+  text-align: center;
+}
+.contenido .productos article {
+  box-shadow: 1px 1px 1px 0px rgba(50,50,50,0.75);
+  display: inline-block;
+}
+.contenido .productos article img {
+  height: 290px;
+}
+.contenido .productos article h3 {
+  font-family: Georgia;
+  font-weight: normal;
+  text-align: center;
+}
+.contenido .productos .divisor {
+  margin: 38px 0 25px 0;
+  border: 2px #000;
+  border-top-style: dotted;
+  border-bottom-style: none;
+  border-right-style: none;
+  border-left-style: none;
+}
+.contenido .productos .divisor2 {
+  margin: 16px 0 0 0;
+  border: 2px #000;
+  border-top-style: dotted;
+  border-bottom-style: none;
+  border-right-style: none;
+  border-left-style: none;
+}
+.contenido .mensaje {
+  display: inline-block;
+}
+.contenido .mensaje .frase {
+  margin: 10px 0 0 0;
+  letter-spacing: 2px;
+  font-size: 50px;
+  font-family: Impact;
+  font-weight: normal;
+  width: 400px;
+  display: inline-block;
+}
+.contenido .mensaje .frases {
+  float: right;
+  border: 2px #000;
+  border-top-style: none;
+  border-bottom-style: none;
+  border-right-style: none;
+  border-left-style: dotted;
+  display: inline-block;
+  margin: 15px 0 0 0;
+  padding: 0 0 0 15px;
+}
+.contenido .mensaje .frases p {
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 25px;
+  letter-spacing: 0.5px;
+}
+footer {
+  height: 250px;
+  display: inline-block;
+}
+footer .direccion {
+  margin: 15px 0 15px 0;
+  width: 326px;
+  height: 110px;
+  float: left;
+  border: 2px #000;
+  border-top-style: none;
+  border-bottom-style: none;
+  border-right-style: dotted;
+  border-left-style: none;
+}
+footer .direccion h4 {
+  margin: 0.5em 0;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 25px;
+  letter-spacing: 0.5px;
+}
+footer .direccion h6 {
+  margin: 0;
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 16px;
+}
+footer .ayuda {
+  margin: 15px 0 15px 0;
+  padding: 0 0 0 1em;
+  width: 326px;
+  height: 110px;
+  float: left;
+  border: 2px #000;
+  border-top-style: none;
+  border-bottom-style: none;
+  border-right-style: dotted;
+  border-left-style: none;
+}
+footer .ayuda h4 {
+  margin: 0.5em 0;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 25px;
+  letter-spacing: 0.5px;
+}
+footer .ayuda h6 {
+  margin: 0;
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 16px;
+}
+footer .moneda {
+  height: 110px;
+  margin: 15px 0 15px 0;
+  padding: 0 0 0 1em;
+  width: 290px;
+  float: left;
+}
+footer .moneda h4 {
+  margin: 0;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 25px;
+  letter-spacing: 0.5px;
+}
+footer .diseñador {
+  float: left;
+  font-weight: normal;
+  font-family: Georgia;
+  font-size: 14px;
+}
+.productosWeb {
+  width: 980px;
+  margin: 0 auto;
+  display: inline-block;
+}
+.productosWeb h2 {
+  margin: 15px 0;
+  color: #966600;
+  letter-spacing: 1px;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 28px;
+  text-align: center;
+}
+.productosWeb article {
+  box-shadow: 1px 1px 1px 0px rgba(50,50,50,0.75);
+  display: inline-block;
+  margin: 20px 23px;
+}
+.productosWeb article img {
+  height: 290px;
+}
+.productosWeb article h3 {
+  font-family: Georgia;
+  font-weight: normal;
+  text-align: center;
+  font-size: 12px;
+  margin: 0;
+}
+.productosWeb article a {
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0 0 0 40px;
+  padding: 0;
+  color: #000;
+  border: 1px solid #ffb005;
+}
+.productosWeb article a:hover {
+  background: #ffb005;
+}
+.productosWeb .modificarD h3 {
+  display: inline-block;
+  width: 50px;
+  text-align: right;
+}
+.productosWeb .modificarD input {
+  width: 137px;
+  font-family: Georgia;
+  font-weight: normal;
+}
+.productosWeb .modificarD .enviarM {
+  background: #f6f6f6;
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 10px 27px;
+  padding: 0;
+  color: #000;
+  border: 1px solid #ffb005;
+}
+.productosWeb .modificarD .enviarM:hover {
+  background: #ffb005;
+}
+.productosWeb .enviarEli {
+  background: #f6f6f6;
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 10px 27px;
+  padding: 0 35px;
+  color: #000;
+  border: 1px solid #ffb005;
+}
+.productosWeb .enviarEli:hover {
+  background: #ffb005;
+}
+.productosWeb .divisor {
+  margin: 38px 0 25px 0;
+  border: 2px #000;
+  border-top-style: dotted;
+  border-bottom-style: none;
+  border-right-style: none;
+  border-left-style: none;
+}
+.productosWeb form .bloque {
+  display: inline-block;
+  margin: 0 25px;
+}
+.productosWeb form .fecha {
+  display: inline-block;
+}
+.productosWeb form table tr td h3 {
+  font-family: Georgia;
+}
+.productosWeb form table tr td input {
+  width: 250px;
+}
+.productosWeb .logoEspecial {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  width: 50%;
+}
+.productosWeb h3 {
+  font-family: Georgia;
+}
+.productosWeb h3 a {
+  text-decoration: none;
+  color: #ffb005;
+}
+.productosWeb iframe {
+  margin: 50px 0 25px 0;
+}
+.productosWeb .detalleUbicacion {
+  float: right;
+  width: 370px;
+  margin: 50px 0 0 0;
+  font-family: Georgia;
+  font-size: 32px;
+}
+.productosWeb .detalles {
+  font-family: Georgia;
+  display: inline-block;
+}
+.sesionPlz {
+  margin: 100px 10px;
+  border: 2px #000;
+  padding: 0;
+}
+.detalle {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+}
+.detalle .nosotros {
+  font-family: Georgia;
+  font-size: 24px;
+  font-aling: justify;
+}
+.detalle h2 {
+  margin: 15px 0;
+  color: #966600;
+  letter-spacing: 1px;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 28px;
+  text-align: center;
+}
+.detalle article {
+  box-shadow: 1px 1px 1px 0px rgba(50,50,50,0.75);
+  display: inline-block;
+  margin: 20px 23px;
+}
+.detalle article img {
+  height: 500px;
+  display: inline-block;
+}
+.detalle .detalles {
+  display: inline-block;
+  position: absolute;
+  top: 75px;
+}
+.detalle .detalles h3 {
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 36px;
+  margin: 0 0 10px 0;
+}
+.detalle .detalles form label {
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 32px;
+}
+.detalle .detalles form .addCarro {
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  padding: 0 15px;
+  color: #000;
+  border: 1px solid #ffb005;
+}
+.detalle .detalles form .addCarro:hover {
+  background: #ffb005;
+}
+.detalle .detalles form input {
+  margin: 25px 10px;
+  font-family: Georgia;
+  font-weight: normal;
+  padding: 3px;
+}
+.detalle .divisor {
+  margin: 38px 0 25px 0;
+  border: 2px #000;
+  border-top-style: dotted;
+  border-bottom-style: none;
+  border-right-style: none;
+  border-left-style: none;
+}
+.detalleCompra {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+}
+.detalleCompra h2 {
+  margin: 15px 0;
+  color: #966600;
+  letter-spacing: 1px;
+  font-family: Impact;
+  font-weight: normal;
+  font-size: 28px;
+  text-align: center;
+}
+.detalleCompra .divisor {
+  margin: 38px 0 25px 0;
+  border: 2px #000;
+  border-top-style: dotted;
+  border-bottom-style: none;
+  border-right-style: none;
+  border-left-style: none;
+}
+.detalleCompra .listaCompra {
+  display: inline-block;
+  margin: 10px 35px;
+  width: 250px;
+  box-shadow: 1px 1px 1px #000;
+}
+.detalleCompra .listaCompra h4 {
+  margin: 0;
+}
+.detalleCompra a {
+  display: inline-block;
+  background: #ffb005;
+  text-decoration: none;
+  color: #000;
+  padding: 10px 15px;
+  font-size: 32px;
+  font-family: Impact;
+  font-weight: normal;
+  margin: 0 0 0px 790px;
+}
+.detalleCompra a:hover {
+  background: #000;
+  color: #ffb005;
+}
+.detalleCompra .editarCarro {
+  background: #ffb005;
+  text-decoration: none;
+  color: #000;
+  padding: 10px 15px;
+  font-size: 32px;
+  font-family: Impact;
+  font-weight: normal;
+  margin: 10px 0;
+}
+.detalleCompra .editarCarro:hover {
+  background: #000;
+  color: #ffb005;
+}
+
+.botones
+{
+    width: 300px;
+    margin: 10px auto;
+}
+
+.botones a
+{
+    font-family: Impact;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+    padding: 0 10px;
+    border: 1px solid #ffb005;
+    
+    
+}
+.botones a:hover
+{
+    
+    background: #ffb005;
+}
